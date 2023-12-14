@@ -1,28 +1,12 @@
-class Online_Store():
-    def default_info_store(self):
-       
-        s_id= 1
-        self.s_name = "elgarhy store"
-        self.s_address ="egypt"
-        self.s_email="elgarhyStore@gmail.com"
-        return(f"\n{self.s_name}\n{self.s_address}\n{self.s_email}")
-    def customer_info(self):
-         
-        print(f"{self.default_info_store()}\nyour information is \nname: {self.fname} {self.lname}\nadress: {self.c_address}\nphone: {self.phone}\nemail: {self.c_email}\norder total price = {category().Shopping_cart}")
-        
-            
-    
- 
-
-
-class category(Online_Store):
-    Shopping_cart=set()
+#this is simple project for online store
+class category():
+    Shopping_cart=[]
    
     def category_info(slef):
         category_id=1
         
         
-    Electronics ={
+    Electronics = {
             "-1- Smartphones =" : 5000,
             "-2- Laptops ="     : 20000,
             "-3- Cameras ="     : 3000,
@@ -31,7 +15,7 @@ class category(Online_Store):
          }
        
     
-    Fashion ={
+    Fashion = {
             "-1- dresses =" :1000,
             "-2- shirts ="     :200,
             "-3- jeans ="     :300,
@@ -39,21 +23,25 @@ class category(Online_Store):
             "-5- bags =" :100
         }
     
-    Toys_and_Games ={
+    Toys_and_Games = {
             "-1- Board games =" : 500,
             "-2- Toys for children ="   : 2000,
             "-3- Video games ="     : 6000,
             
         }
     
-    Books_and_Stationery ={
+    Books_and_Stationery = {
             "-1- Novels ="        : 200,
             "-2- Notebooks ="     : 100,
             "-3- Pens ="          : 50,
            
         }
-
-
+    def total_p(self):
+        
+        total_price = 0
+        for cat in category().Shopping_cart:
+            total_price += cat
+        return total_price
 class order (category):
     
     def order_info(self):
@@ -69,8 +57,8 @@ class order (category):
                 case "1":
                     confirm_choice= input("you want buy smartphone and its price =5000 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Electronics['-1- Smartphones ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Electronics['-1- Smartphones ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             
@@ -92,8 +80,8 @@ class order (category):
                 case "2":
                     confirm_choice= input("you want buy laptopo and its price =20000 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Electronics['-2- Laptops ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Electronics['-2- Laptops ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -114,8 +102,8 @@ class order (category):
                 case "3":
                     confirm_choice= input("you want buy camera and its price =3000 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Electronics['-3- Cameras ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Electronics['-3- Cameras ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -136,8 +124,8 @@ class order (category):
                 case "4":
                     confirm_choice= input("you want buy headphone and its price =500 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Electronics['-4- Headphones ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Electronics['-4- Headphones ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -158,8 +146,8 @@ class order (category):
                 case "5":
                     confirm_choice= input("you want buy smartwatche and its price =900 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Electronics['-5- Smartwatches ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Electronics['-5- Smartwatches ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -184,8 +172,8 @@ class order (category):
                 case "1":
                     confirm_choice= input("you want buy dresses and its price =1000 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Fashion['-1- dresses ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Fashion['-1- dresses ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             
@@ -207,8 +195,8 @@ class order (category):
                 case "2":
                     confirm_choice= input("you want buy shirts and its price =200 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Fashion['-2- shirts ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Fashion['-2- shirts ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -229,8 +217,8 @@ class order (category):
                 case "3":
                     confirm_choice= input("you want buy jeans and its price =300 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Fashion['-3- jeans ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Fashion['-3- jeans ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -251,8 +239,8 @@ class order (category):
                 case "4":
                     confirm_choice= input("you want buy Shoes and its price =400 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Fashion['-4- Shoes ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Fashion['-4- Shoes ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -273,8 +261,8 @@ class order (category):
                 case "5":
                     confirm_choice= input("you want buy bags and its price =100 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Fashion['-5- bags ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Fashion['-5- bags ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -299,8 +287,8 @@ class order (category):
                 case "1":
                     confirm_choice= input("you want buy Board games and its price =500 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Toys_and_Games['-1- Board games ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Toys_and_Games['-1- Board games ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             
@@ -322,8 +310,8 @@ class order (category):
                 case "2":
                     confirm_choice= input("you want buy Toys for children and its price =2000 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Toys_and_Games['-2- Toys for children ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Toys_and_Games['-2- Toys for children ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -344,8 +332,8 @@ class order (category):
                 case "3":
                     confirm_choice= input("you want buy Video games and its price =6000 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Toys_and_Games['-3- Video games ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Toys_and_Games['-3- Video games ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -370,8 +358,8 @@ class order (category):
                 case "1":
                     confirm_choice= input("you want buy Novels and its price =200 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Books_and_Stationery['-1- Novels ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Books_and_Stationery['-1- Novels ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             
@@ -393,8 +381,8 @@ class order (category):
                 case "2":
                     confirm_choice= input("you want buy Notebooks and its price =100 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Books_and_Stationery['-2- Notebooks ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Books_and_Stationery['-2- Notebooks ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -415,8 +403,8 @@ class order (category):
                 case "3":
                     confirm_choice= input("you want buy Pens and its price =50 to confirm enter \"y\" to cancel enter \"n\"")
                     if confirm_choice =="y":
-                        category().Shopping_cart.add( category().Books_and_Stationery['-3- Pens ='])
-                        print(category().Shopping_cart)
+                        category().Shopping_cart.append( category().Books_and_Stationery['-3- Pens ='])
+                        print(self.total_p())
                         new_buy = input("success!!  do you want to buy another thing \'y\' or \'n\'")
                         if new_buy =="y":
                             return self.choose_category()
@@ -450,19 +438,29 @@ class order (category):
             else:
                 self.display() 
 
+
+
+
+class Online_Store(order):
+    def default_info_store(self):
+        s_name = "elgarhy store"
+        s_address ="egypt"
+        s_email="elgarhyStore@gmail.com"
+        print(f"\n{s_name}\n{s_address}\n{s_email}")
+    def customer_info(self):
+         
+        print(f"{self.default_info_store()}\nyour information is \nname: {self.fname} {self.lname}\nadress: {self.c_address}\nphone: {self.phone}\nemail:{self.c_email}\norder total price = {self.total_p()}")
+        
+            
+    
+ 
     
 
-    
 
 
 
 
 
 
-
-
-
-os = order()
+os = Online_Store()
 os.display()
-
-
