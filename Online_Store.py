@@ -5,7 +5,7 @@ class Online_Store():
         self.s_name = "elgarhy store"
         self.s_address ="egypt"
         self.s_email="elgarhyStore@gmail.com"
-        return "\n",self.s_name,"\n",self.s_address,"\n",self.s_email
+        return(f"\n{self.s_name}\n{self.s_address}\n{self.s_email}")
     def customer_info(self):
          
         print(f"{self.default_info_store()}\nyour information is \nname: {self.fname} {self.lname}\nadress: {self.c_address}\nphone: {self.phone}\nemail: {self.c_email}\norder total price = {category().Shopping_cart}")
